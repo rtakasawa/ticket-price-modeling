@@ -1,0 +1,2 @@
+class Cinema_Citizen
+end
