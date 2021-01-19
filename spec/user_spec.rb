@@ -1,4 +1,4 @@
-require '../lib/user/user.rb'
+require './lib/user/user.rb'
 
 
 describe "User" do

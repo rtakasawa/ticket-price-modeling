@@ -1,4 +1,4 @@
-require_relative 'movie_day_type'
+require "./lib/movie_day_type/movie_day_type.rb"
 
 describe "MovieDayType" do
   example "土曜日の場合、@day_type='holiday'" do
