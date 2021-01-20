@@ -18,7 +18,7 @@ class User
       "シネマシティズン（60才以上）" => "CinemaCitizenSenior",
       "一般" => "General",
       "シニア（70才以上）" => "Senior",
-      "学生（大・専）" => "UniversityStudent",
+      "学生（大・専）" => "CollegeStudent",
       "中・高校生" => "HighSchoolStudent",
       "幼児（3才以上）・小学生" => "ElementarySchoolStudent",
       "障がい者（学生以上）" => "DisabledPerson",

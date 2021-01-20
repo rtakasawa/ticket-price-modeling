@@ -1,6 +1,6 @@
 require_relative 'user_type'
 
-class UniversityStudent < UserType
+class CollegeStudent < UserType
   def set_price
     @weekday_twilight_show = 1500
     @weekday_late_show = 1300

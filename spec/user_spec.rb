@@ -1,4 +1,5 @@
 require './lib/user/user.rb'
+require 'securerandom'
 
 
 describe "User" do
@@ -45,7 +46,7 @@ describe "User" do
 
   example "userが学生（大・専）の場合、当該インスタンスが生成される" do
     user = User.new("学生（大・専）")
-    expect(user.user_type.class).to eq UniversityStudent
+    expect(user.user_type.class).to eq CollegeStudent
     expect(user.user_type.weekday_twilight_show).to eq 1500
     expect(user.user_type.weekday_late_show).to eq 1300
     expect(user.user_type.holiday_twilight_show).to eq 1500
@@ -91,5 +92,10 @@ describe "User" do
     expect(user.user_type.holiday_twilight_show).to eq 900
     expect(user.user_type.holiday_late_show).to eq 900
     expect(user.user_type.cinema_day).to eq 900
+  end
+
+  example "User.newの引数にuser_typeに該当しない引数が指定された場合、エラーになる" do
+    sample_word = SecureRandom.alphanumeric
+    expect{user = User.new(sample_word)}.to raise_error(SyntaxError)
   end
 end
