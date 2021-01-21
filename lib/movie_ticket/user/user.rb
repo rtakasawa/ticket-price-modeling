@@ -25,7 +25,6 @@ class User
       "障がい者（高校以下）" => "DisabledPersonHighSchool"
     }
     get_user_type = user_type_list[user]
-    binding.irb
     eval "#{get_user_type}.new"
   end
 end
