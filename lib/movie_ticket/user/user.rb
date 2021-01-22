@@ -11,20 +11,21 @@ class User
     @user_type = user_type_check(user)
   end
 
+  USER_TYPE_LIST = {
+    "シネマシティズン" => "CinemaCitizen",
+    "シネマシティズン（60才以上）" => "CinemaCitizenSenior",
+    "一般" => "General",
+    "シニア（70才以上）" => "Senior",
+    "学生（大・専）" => "CollegeStudent",
+    "中・高校生" => "HighSchoolStudent",
+    "幼児（3才以上）・小学生" => "ElementarySchoolStudent",
+    "障がい者（学生以上）" => "DisabledPerson",
+    "障がい者（高校以下）" => "DisabledPersonHighSchool"
+  }
+
   # ユーザータイプのオブジェクトを入れる
   def user_type_check(user)
-    user_type_list = {
-      "シネマシティズン" => "CinemaCitizen",
-      "シネマシティズン（60才以上）" => "CinemaCitizenSenior",
-      "一般" => "General",
-      "シニア（70才以上）" => "Senior",
-      "学生（大・専）" => "CollegeStudent",
-      "中・高校生" => "HighSchoolStudent",
-      "幼児（3才以上）・小学生" => "ElementarySchoolStudent",
-      "障がい者（学生以上）" => "DisabledPerson",
-      "障がい者（高校以下）" => "DisabledPersonHighSchool"
-    }
-    get_user_type = user_type_list[user]
+    get_user_type = USER_TYPE_LIST[user]
     eval "#{get_user_type}.new"
   end
 end
