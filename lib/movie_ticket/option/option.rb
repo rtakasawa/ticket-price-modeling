@@ -15,7 +15,10 @@ class Option
     "3D" => "ThreeDMovie",
     "3D（メガネなし）" => "ThreeDMovieNoGlasses"
   }.freeze
-  OPTION_TYPE_LIST.each_value(&:freeze)
+  OPTION_TYPE_LIST.each do |key,value|
+    key.freeze
+    value.freeze
+  end
 
   # オプションタイプのオブジェクトを入れる
   def option_type_check(option)

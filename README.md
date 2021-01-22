@@ -15,4 +15,7 @@ ruby 2.6.5
 
 ## 実行方法（売上集計）
 `cd lib`\
-`ruby lib/manager.rb`
+`ruby manager.rb`
+
+## クラス図
+![class_diagram](https://user-images.githubusercontent.com/60159339/105509161-95432e80-5d10-11eb-8fdd-c8368924e270.png)
