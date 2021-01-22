@@ -11,6 +11,7 @@ class User
     @user_type = user_type_check(user)
   end
 
+  # ユーザーのタイプ一覧
   USER_TYPE_LIST = {
     "シネマシティズン" => "CinemaCitizen",
     "シネマシティズン（60才以上）" => "CinemaCitizenSenior",
@@ -21,7 +22,15 @@ class User
     "幼児（3才以上）・小学生" => "ElementarySchoolStudent",
     "障がい者（学生以上）" => "DisabledPerson",
     "障がい者（高校以下）" => "DisabledPersonHighSchool"
-  }
+  }.freeze
+
+  #修正中
+  # USER_TYPE_LIST.each do |key, value|
+  #   irb(main):023:0> USER_TYPE_LIST.map do |key,value|
+  #     irb(main):024:1* key.freeze
+  #     irb(main):025:1> value.freeze
+  #     irb(main):026:1> end
+  # end
 
   # ユーザータイプのオブジェクトを入れる
   def user_type_check(user)

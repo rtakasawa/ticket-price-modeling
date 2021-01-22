@@ -1,4 +1,4 @@
-require "./lib/movie_time_type/movie_time_type.rb"
+require "./lib/movie_ticket/movie_time_type/movie_time_type.rb"
 
 describe "MovieTimeType" do
   example "上映開始時間が20時より前の場合、@time_type='twilight_show'" do

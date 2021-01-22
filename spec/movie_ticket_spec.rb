@@ -1,4 +1,4 @@
-require './lib/movie_ticket.rb'
+require './lib/movie_ticket/movie_ticket.rb'
 
 describe "MovieTicket" do
   example "2021/1/20(木)のチケット情報が生成できる。チケット料金1000円" do

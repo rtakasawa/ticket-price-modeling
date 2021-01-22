@@ -1,4 +1,4 @@
-require './lib/user/user.rb'
+require './lib/movie_ticket/user/user.rb'
 require 'securerandom'
 
 
