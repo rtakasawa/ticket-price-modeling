@@ -2,7 +2,7 @@
 module FeeCalculation
 
   # 通常の料金計算
-  def fee_calculation(day, time, user)
+  def fee_calculation(day, time, user, option)
     @fee = 0
     day_type = day.day_type
     time_type = time.time_type
@@ -23,6 +23,8 @@ module FeeCalculation
 
     self.cinema_citizen_weekday_cinema_day_fee(day_type, user_type, cinema_day)
 
+    self.option_true(option)
+
     @fee
   end
 
@@ -32,5 +34,9 @@ module FeeCalculation
     if user_type.class == CinemaCitizen && cinema_day == true && day_type == "weekday"
       @fee = user_type.weekday_cinema_day
     end
+  end
+
+  def option_true(option)
+    @fee += option.option_type.price if option != nil
   end
 end

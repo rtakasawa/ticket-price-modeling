@@ -1,5 +1,6 @@
 require_relative "./movie_time_type/movie_time_type"
 require_relative './movie_day_type/movie_day_type'
+require_relative './option/option.rb'
 require_relative './user/user.rb'
 require_relative 'fee_calculation'
 
@@ -7,13 +8,14 @@ require_relative 'fee_calculation'
 class MovieTicket
   include FeeCalculation
 
-  attr_reader :day, :time, :title, :user, :fee
+  attr_reader :day, :time, :title, :user, :option, :fee
 
-  def initialize(day_time, title, user)
+  def initialize(day_time, title, user, option)
     @day = MovieDayType.new(day_time)
     @time = MovieTimeType.new(day_time)
     @title = title
     @user = User.new(user)
-    @fee = fee_calculation(@day, @time, @user)
+    @option = Option.new(option) if option != nil
+    @fee = fee_calculation(@day, @time, @user, @option)
   end
 end
