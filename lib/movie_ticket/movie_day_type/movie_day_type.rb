@@ -2,7 +2,7 @@ require 'holiday_japan'
 
 # 映画の日時情報
 class MovieDayType
-  attr_accessor :day_type, :cinema_day
+  attr_reader :day_type, :cinema_day
 
   def initialize(movie_day)
     movie_day_obj = Date.parse(movie_day)

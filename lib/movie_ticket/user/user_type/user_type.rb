@@ -1,5 +1,5 @@
 class UserType
-  attr_accessor :weekday_twilight_show, :weekday_late_show, :holiday_twilight_show, :holiday_late_show, :cinema_day
+  attr_reader :weekday_twilight_show, :weekday_late_show, :holiday_twilight_show, :holiday_late_show, :cinema_day
 
   def initialize
     set_price

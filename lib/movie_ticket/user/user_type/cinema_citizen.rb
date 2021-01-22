@@ -1,7 +1,7 @@
 require_relative 'user_type'
 
 class CinemaCitizen < UserType
-  attr_accessor :weekday_cinema_day
+  attr_reader :weekday_cinema_day
 
   def set_price
     @weekday_twilight_show = 1000

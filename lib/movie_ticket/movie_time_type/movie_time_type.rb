@@ -2,7 +2,7 @@ require 'time'
 
 # 映画の日時情報
 class MovieTimeType
-  attr_accessor :time_type
+  attr_reader :time_type
 
   def initialize(movie_time)
     movie_time_obj = Time.parse(movie_time)
