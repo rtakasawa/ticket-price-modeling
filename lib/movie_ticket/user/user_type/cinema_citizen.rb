@@ -1,4 +1,4 @@
-require_relative 'user_type'
+require_relative "user_type"
 
 class CinemaCitizen < UserType
   attr_reader :weekday_cinema_day

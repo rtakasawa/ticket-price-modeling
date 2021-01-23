@@ -1,8 +1,8 @@
 require_relative "./movie_time_type/movie_time_type"
-require_relative './movie_day_type/movie_day_type'
-require_relative './option/option.rb'
-require_relative './user/user.rb'
-require_relative 'fee_calculation'
+require_relative "./movie_day_type/movie_day_type"
+require_relative "./option/option"
+require_relative "./user/user.rb"
+require_relative "fee_calculation"
 
 # 映画チケット情報
 class MovieTicket
@@ -15,7 +15,7 @@ class MovieTicket
     @time = MovieTimeType.new(day_time)
     @title = title
     @user = User.new(user)
-    @option = Option.new(option) if option != nil
-    @fee = fee_calculation(@day, @time, @user, @option)
+    @option = Option.new(option)
+    @fee = self.fee_calculation(@day, @time, @user, @option)
   end
 end

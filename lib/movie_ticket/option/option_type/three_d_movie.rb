@@ -1,4 +1,4 @@
-require_relative 'option_type'
+require_relative "option_type"
 
 class ThreeDMovie < OptionType
   def initialize

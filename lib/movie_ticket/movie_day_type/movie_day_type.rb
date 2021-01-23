@@ -1,4 +1,4 @@
-require 'holiday_japan'
+require "holiday_japan"
 
 # 映画の日時情報
 class MovieDayType
@@ -10,12 +10,17 @@ class MovieDayType
     @cinema_day = cinema_day_check(movie_day_obj)
   end
 
+  HOLIDAY = "holiday"
+  WEEKDAY = "weekday"
+  HOLIDAY.freeze
+  WEEKDAY.freeze
+
   # 平日・土日祝日のチェック
   def day_type_check(movie_day)
     if HolidayJapan.check(movie_day.to_date) || movie_day.sunday? || movie_day.saturday?
-      'holiday'
+      HOLIDAY
     else
-      'weekday'
+      WEEKDAY
     end
   end
 

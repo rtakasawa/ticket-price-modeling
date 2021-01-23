@@ -2,6 +2,6 @@ class OptionType
   attr_reader :price
 
   def initialize
-    @price = nil
+    @price = 0
   end
 end

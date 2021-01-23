@@ -1,4 +1,4 @@
-Dir[File.expand_path('../user_type', __FILE__) << '/*.rb'].each do |file|
+Dir[File.expand_path("../user_type", __FILE__) << "/*.rb"].each do |file|
   require file
 end
 

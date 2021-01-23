@@ -1,4 +1,4 @@
-Dir[File.expand_path('../option_type', __FILE__) << '/*.rb'].each do |file|
+Dir[File.expand_path("../option_type", __FILE__) << "/*.rb"].each do |file|
   require file
 end
 
@@ -12,6 +12,7 @@ class Option
 
   # オプション一覧
   OPTION_TYPE_LIST = {
+    nil => "OptionType",
     "3D" => "ThreeDMovie",
     "3D（メガネなし）" => "ThreeDMovieNoGlasses"
   }.freeze

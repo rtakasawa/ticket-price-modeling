@@ -1,12 +1,12 @@
-require_relative 'sales_calculation'
-require_relative './movie_ticket/movie_ticket_factory.rb'
+require_relative "sales_calculation"
+require_relative "./movie_ticket/sales_ticket_reader.rb"
 
 include SalesCalculation
 
 # movie_sales_info.csvのサマリー
 puts "【movie_sales_info.csv_出力データ（売上集計）】"
-sales_tickets = MovieTicketFactory.new
-sales_tickets.create("../movie_sales_info.csv")
+sales_tickets = SalesTicketReader.new
+sales_tickets.csv_reader("../csv/movie_sales_info.csv")
 # サマリー
 self.total_summary(sales_tickets)
 puts
@@ -20,8 +20,8 @@ puts
 
 # original_movie_sales_info.csvのサマリー
 puts "【original_movie_sales_info.csv_出力データ（売上集計）】"
-sales_tickets = MovieTicketFactory.new
-sales_tickets.create("../original_movie_sales_info.csv")
+sales_tickets = SalesTicketReader.new
+sales_tickets.csv_reader("../csv/original_movie_sales_info.csv")
 # サマリー
 self.total_summary(sales_tickets)
 puts
@@ -35,8 +35,8 @@ puts
 
 # option_true_movie_sales_infoのサマリー
 puts "【option_true_movie_sales_info_出力データ（売上集計）】"
-sales_tickets = MovieTicketFactory.new
-sales_tickets.create("../option_true_movie_sales_info.csv")
+sales_tickets = SalesTicketReader.new
+sales_tickets.csv_reader("../csv/option_true_movie_sales_info.csv")
 # サマリー
 self.total_summary(sales_tickets)
 puts

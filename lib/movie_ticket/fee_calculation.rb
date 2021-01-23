@@ -8,35 +8,30 @@ module FeeCalculation
     time_type = time.time_type
     cinema_day = day.cinema_day
     user_type = user.user_type
+    option_price = option.option_type.price
 
-    @fee = if cinema_day == true
+    @fee = if cinema_day == true #カッコでくくれる？
       user_type.cinema_day
-    elsif day_type == "weekday" && time_type == "twilight_show"
+    elsif day_type == MovieDayType::WEEKDAY && time_type == MovieTimeType::TWILIGHT_SHOW
       user_type.weekday_twilight_show
-    elsif day_type == "weekday" && time_type == "late_show"
+    elsif day_type == MovieDayType::WEEKDAY && time_type == MovieTimeType::LATE_SHOW
       user_type.weekday_late_show
-    elsif day_type == "holiday" && time_type == "twilight_show"
+    elsif day_type == MovieDayType::HOLIDAY && time_type == MovieTimeType::TWILIGHT_SHOW
       user_type.holiday_twilight_show
-    elsif day_type == "holiday" && time_type == "late_show"
+    elsif day_type == MovieDayType::HOLIDAY && time_type == MovieTimeType::LATE_SHOW
       user_type.holiday_late_show
     end
 
     self.cinema_citizen_weekday_cinema_day_fee(day_type, user_type, cinema_day)
 
-    self.option_true(option)
-
-    @fee
+    @fee + option_price
   end
 
   # 通常と異なる料金計算メソッド
 
   def cinema_citizen_weekday_cinema_day_fee(day_type, user_type, cinema_day)
-    if user_type.class == CinemaCitizen && cinema_day == true && day_type == "weekday"
+    if user_type.class == CinemaCitizen && cinema_day == true && day_type == MovieDayType::WEEKDAY
       @fee = user_type.weekday_cinema_day
     end
-  end
-
-  def option_true(option)
-    @fee += option.option_type.price if option != nil
   end
 end

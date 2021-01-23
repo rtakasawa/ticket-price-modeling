@@ -1,4 +1,4 @@
-require_relative 'user_type'
+require_relative "user_type"
 
 class ElementarySchoolStudent < UserType
   def set_price
