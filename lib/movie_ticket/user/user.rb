@@ -2,7 +2,7 @@ Dir[File.expand_path("../user_type", __FILE__) << "/*.rb"].each do |file|
   require file
 end
 
-# チケット購入者の情報
+# ユーザー情報
 class User
   attr_reader :user_type
 

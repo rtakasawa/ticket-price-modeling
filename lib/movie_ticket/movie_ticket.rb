@@ -6,7 +6,7 @@ require_relative "fee_calculation"
 
 # 映画チケット情報
 class MovieTicket
-  attr_reader :day, :time, :title, :user, :option, :fee
+  attr_reader :day, :time, :title, :user, :option, :fee_info
 
   def initialize(day_time, title, user, option)
     @day = MovieDayType.new(day_time)
@@ -14,7 +14,6 @@ class MovieTicket
     @title = title
     @user = User.new(user)
     @option = Option.new(option)
-    fee_obj = FeeCalculation.new
-    @fee = fee_obj.fee_calculation(@day, @time, @user, @option)
+    @fee_info = FeeCalculation.new(@day, @time, @user, @option)
   end
 end

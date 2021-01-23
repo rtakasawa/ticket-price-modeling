@@ -1,5 +1,9 @@
 # チケット1枚の料金計算機能
 class FeeCalculation
+  attr_reader :fee
+  def initialize(day, time, user, option)
+    @fee = self.fee_calculation(day, time, user, option)
+  end
 
   # 通常の料金計算
   def fee_calculation(day, time, user, option)

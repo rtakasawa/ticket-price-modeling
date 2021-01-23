@@ -1,17 +1,25 @@
 class SalesCalculation
 
+  attr_reader :total_summary, :title_summary, :user_summary
+
+  def initialize(sales_tickets)
+    @total_summary = self.get_total_summary(sales_tickets)
+    @title_summary = self.get_title_summary(sales_tickets)
+    @user_summary = self.get_user_summary(sales_tickets)
+  end
+
   # サマリー集計
-  def total_summary(sales_tickets)
+  def get_total_summary(sales_tickets)
     total_summary = 0
     sales_tickets.info.each do |i|
-      total_summary += i.fee
+      total_summary += i.fee_info.fee
     end
 
     self.price_format_change(total_summary)
   end
 
   # 作品別売上集計
-  def title_summary(sales_tickets)
+  def get_title_summary(sales_tickets)
     title_list = []
     title_price_list = Hash.new
     sales_tickets.info.each {|i| title_list.push(i.title)}
@@ -21,7 +29,7 @@ class SalesCalculation
       price = 0
       sales_tickets.info.select do |i|
         if i.title == title
-          price += i.fee
+          price += i.fee_info.fee
         end
       end
       price = self.price_format_change(price)
@@ -31,13 +39,13 @@ class SalesCalculation
   end
 
   # 料金タイプ別売上集計
-  def user_price_summary(sales_tickets)
+  def get_user_summary(sales_tickets)
     user_price_list = Hash.new
     User::USER_TYPE_LIST.each do |user_type_jp,user_type|
       price = 0
       sales_tickets.info.select do |i|
         if i.user.user_type.class.to_s == user_type
-          price += i.fee
+          price += i.fee_info.fee
         end
       end
       price = self.price_format_change(price)

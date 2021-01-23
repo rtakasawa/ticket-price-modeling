@@ -6,10 +6,10 @@ class UserType
   end
 
   def set_price
-    @weekday_twilight_show = nil
-    @weekday_late_show = nil
-    @holiday_twilight_show = nil
-    @holiday_late_show = nil
-    @cinema_day = nil
+    @weekday_twilight_show = 0
+    @weekday_late_show = 0
+    @holiday_twilight_show = 0
+    @holiday_late_show = 0
+    @cinema_day = 0
   end
 end
