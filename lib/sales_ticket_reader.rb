@@ -1,5 +1,5 @@
 require "csv"
-require_relative "movie_ticket"
+require_relative "./movie_ticket/movie_ticket"
 
 class SalesTicketReader
   attr_reader :info
