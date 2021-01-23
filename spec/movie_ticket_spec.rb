@@ -8,7 +8,7 @@ describe "MovieTicket" do
     expect(movie_ticket.time.time_type).to eq "late_show"
     expect(movie_ticket.title).to eq "ジュマンジ"
     expect(movie_ticket.user.user_type.class).to eq CinemaCitizenSenior
-    expect(movie_ticket.fee).to eq 1000
+    expect(movie_ticket.fee_info.fee).to eq 1000
   end
 
   example "2021/2/1(月)のチケット情報が生成できる。チケット料金1000円" do
@@ -18,7 +18,7 @@ describe "MovieTicket" do
     expect(movie_ticket.time.time_type).to eq "late_show"
     expect(movie_ticket.title).to eq "ジュマンジ"
     expect(movie_ticket.user.user_type.class).to eq CinemaCitizen
-    expect(movie_ticket.fee).to eq 1000
+    expect(movie_ticket.fee_info.fee).to eq 1000
   end
 
   example "2021/5/1(土)のチケット情報が生成できる。チケット料金1100円" do
@@ -28,7 +28,7 @@ describe "MovieTicket" do
     expect(movie_ticket.time.time_type).to eq "late_show"
     expect(movie_ticket.title).to eq "ジュマンジ"
     expect(movie_ticket.user.user_type.class).to eq CinemaCitizen
-    expect(movie_ticket.fee).to eq 1100
+    expect(movie_ticket.fee_info.fee).to eq 1100
   end
 
   example "誕生部プランのチケット情報が生成できる。チケット料金500円" do
@@ -38,7 +38,7 @@ describe "MovieTicket" do
     expect(movie_ticket.time.time_type).to eq "late_show"
     expect(movie_ticket.title).to eq "ジュマンジ"
     expect(movie_ticket.user.user_type.class).to eq Birthday
-    expect(movie_ticket.fee).to eq 500
+    expect(movie_ticket.fee_info.fee).to eq 500
   end
 
   example "オプション3Dメガネのチケット情報が生成できる。チケット料金900円" do
@@ -48,7 +48,7 @@ describe "MovieTicket" do
     expect(movie_ticket.time.time_type).to eq "late_show"
     expect(movie_ticket.title).to eq "ジュマンジ"
     expect(movie_ticket.user.user_type.class).to eq Birthday
-    expect(movie_ticket.fee).to eq 900
+    expect(movie_ticket.fee_info.fee).to eq 900
   end
 
   example "オプション3Dメガネのチケット情報が生成できる。チケット料金800円" do
@@ -58,6 +58,6 @@ describe "MovieTicket" do
     expect(movie_ticket.time.time_type).to eq "late_show"
     expect(movie_ticket.title).to eq "ジュマンジ"
     expect(movie_ticket.user.user_type.class).to eq Birthday
-    expect(movie_ticket.fee).to eq 800
+    expect(movie_ticket.fee_info.fee).to eq 800
   end
 end
