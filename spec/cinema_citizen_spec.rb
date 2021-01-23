@@ -1,4 +1,4 @@
-require './lib/movie_ticket/user/user_type/cinema_citizen.rb'
+require "./lib/movie_ticket/user/user_type/cinema_citizen.rb"
 
 describe "CinemaCitizen" do
   example "CinemaCitizen.newした場合、料金情報が格納される" do
