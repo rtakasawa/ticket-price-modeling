@@ -1,48 +1,50 @@
 require_relative "sales_calculation"
 require_relative "./movie_ticket/sales_ticket_reader.rb"
-
-include SalesCalculation
+require_relative "output_format.rb"
 
 # movie_sales_info.csvのサマリー
-puts "【movie_sales_info.csv_出力データ（売上集計）】"
+puts "【今回のお題の売上集計】"
 sales_tickets = SalesTicketReader.new
 sales_tickets.csv_reader("../csv/movie_sales_info.csv")
+
+sales_calculation = SalesCalculation.new
+output_format = OutputFormat.new
+
 # サマリー
-self.total_summary(sales_tickets)
-puts
+output_format.format_total_summary(sales_calculation.total_summary(sales_tickets))
 # 作品別売上
-self.title_summary(sales_tickets)
-puts
+output_format.format_title_summary(sales_calculation.title_summary(sales_tickets))
 # 料金タイプ別売上
-self.user_price_summary(sales_tickets)
-puts
+output_format.format_user_summary(sales_calculation.user_price_summary(sales_tickets))
 
 
 # original_movie_sales_info.csvのサマリー
-puts "【original_movie_sales_info.csv_出力データ（売上集計）】"
+puts "【誕生プランを加えた売上集計】"
 sales_tickets = SalesTicketReader.new
 sales_tickets.csv_reader("../csv/original_movie_sales_info.csv")
+
+sales_calculation = SalesCalculation.new
+output_format = OutputFormat.new
+
 # サマリー
-self.total_summary(sales_tickets)
-puts
+output_format.format_total_summary(sales_calculation.total_summary(sales_tickets))
 # 作品別売上
-self.title_summary(sales_tickets)
-puts
+output_format.format_title_summary(sales_calculation.title_summary(sales_tickets))
 # 料金タイプ別売上
-self.user_price_summary(sales_tickets)
-puts
+output_format.format_user_summary(sales_calculation.user_price_summary(sales_tickets))
 
 
 # option_true_movie_sales_infoのサマリー
-puts "【option_true_movie_sales_info_出力データ（売上集計）】"
+puts "【３Dオプションを加えた売上集計】"
 sales_tickets = SalesTicketReader.new
 sales_tickets.csv_reader("../csv/option_true_movie_sales_info.csv")
+
+sales_calculation = SalesCalculation.new
+output_format = OutputFormat.new
+
 # サマリー
-self.total_summary(sales_tickets)
-puts
+output_format.format_total_summary(sales_calculation.total_summary(sales_tickets))
 # 作品別売上
-self.title_summary(sales_tickets)
-puts
+output_format.format_title_summary(sales_calculation.title_summary(sales_tickets))
 # 料金タイプ別売上
-self.user_price_summary(sales_tickets)
-puts
+output_format.format_user_summary(sales_calculation.user_price_summary(sales_tickets))

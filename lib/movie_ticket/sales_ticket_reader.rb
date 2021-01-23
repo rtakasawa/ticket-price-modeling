@@ -4,7 +4,7 @@ require_relative "movie_ticket"
 class SalesTicketReader
   attr_reader :info
 
-  # movie_sales_info.csvを読み込んで、MovieTicketインスタンスを生成
+  # csvを読み込んで、MovieTicketインスタンスを生成
   def csv_reader(csv_file_path)
     @info = []
     sales_info = CSV.read(csv_file_path)
