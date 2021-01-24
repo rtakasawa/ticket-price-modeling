@@ -14,4 +14,4 @@ ruby 2.6.5
 `ruby manager.rb`
 
 ## クラス図
-![ticket-price-modeling_クラス図](https://user-images.githubusercontent.com/60159339/105580949-c84df680-5dd2-11eb-9f3e-fff7c15d097a.png)
+![ticket-price-modeling_クラス図-Page-1のコピー](https://user-images.githubusercontent.com/60159339/105620318-1567b200-5e3f-11eb-96b5-4a2981b20f11.png)
