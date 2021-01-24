@@ -11,8 +11,8 @@ class SalesCalculation
   # サマリー集計
   def get_total_summary(sales_tickets)
     total_summary = 0
-    sales_tickets.info.each do |i|
-      total_summary += i.fee_info.fee
+    sales_tickets.each do |ticket|
+      total_summary += ticket.fee_info.fee
     end
 
     self.price_format_change(total_summary)
@@ -22,14 +22,14 @@ class SalesCalculation
   def get_title_summary(sales_tickets)
     title_list = []
     title_price_list = Hash.new
-    sales_tickets.info.each {|i| title_list.push(i.title)}
+    sales_tickets.each {|ticket| title_list.push(ticket.title)}
     title_list.uniq!
 
     title_list.each do |title|
       price = 0
-      sales_tickets.info.select do |i|
-        if i.title == title
-          price += i.fee_info.fee
+      sales_tickets.select do |ticket|
+        if ticket.title == title
+          price += ticket.fee_info.fee
         end
       end
       price = self.price_format_change(price)
@@ -43,9 +43,9 @@ class SalesCalculation
     user_price_list = Hash.new
     User::USER_TYPE_LIST.each do |user_type_jp,user_type|
       price = 0
-      sales_tickets.info.select do |i|
-        if i.user.user_type.class.to_s == user_type
-          price += i.fee_info.fee
+      sales_tickets.select do |ticket|
+        if ticket.user.user_type.class.to_s == user_type
+          price += ticket.fee_info.fee
         end
       end
       price = self.price_format_change(price)
