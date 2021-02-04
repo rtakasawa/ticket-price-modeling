@@ -13,6 +13,6 @@ ruby 2.6.5
 `ruby manager.rb`
 
 ## クラス図
-単一責任、カプセル化、継承等、オブジェクト指向を意識し、下記のとおり設計しました。
+拡張性、単一責任を意識し、下記のとおり設計しました。
 
 ![ticket-price-modeling_クラス図](https://user-images.githubusercontent.com/60159339/105629974-7fa54480-5e89-11eb-8a05-1cbf44bf7d6d.png)
